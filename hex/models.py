@@ -5,5 +5,5 @@ class People(models.Model):
     idade = models.DecimalField(max_digits=3, decimal_places=0)
     email = models.EmailField(max_length=254)
     
-        # def __str__(self):
-        # return f"{self.nome} ({self.idade}) {self.email}"
+    def __str__(self):
+        return f"{self.nome} ({self.idade}) {self.email}"

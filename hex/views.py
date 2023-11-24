@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
 
-# Create your views here.
+from hex.models import People
+from hex.serializers import PeopleSerializer
+
+class PeopleViewSet(ModelViewSet):
+    queryset = People.objects.all()
+    serializer_class = PeopleSerializer
