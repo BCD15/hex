@@ -11,6 +11,7 @@ class AvaliadorSerializer(ModelSerializer):
     class Meta:
         model = Avaliador
         fields = "__all__"
+
         
 class EquipeSerializer(ModelSerializer):
     class Meta:

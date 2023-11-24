@@ -8,16 +8,6 @@ class People(models.Model):
     
     def __str__(self):
         return f"{self.nome} ({self.idade}) {self.email}"
-   
-    
-class Avaliador(models.Model):
-    nome = models.CharField(max_length=100)
-    idade = models.DecimalField(max_digits=3, decimal_places= 0)
-    email = models.EmailField(max_length=254)
-    cpf = models.DecimalField(max_digits=11, decimal_places= 0)
-    
-    def __str__(self):
-        return f"{self.nome} ({self.idade}) {self.email}"
     
     
 class Empresa(models.Model):
@@ -27,14 +17,25 @@ class Empresa(models.Model):
     
     def __str__(self):
         return f"{self.empresa} {self.email}"
-   
     
+    
+class Avaliador(models.Model):
+    nome = models.CharField(max_length=100)
+    idade = models.DecimalField(max_digits=3, decimal_places= 0)
+    email = models.EmailField(max_length=254)
+    cpf = models.DecimalField(max_digits=11, decimal_places= 0)
+    empresa = models.ForeignKey(Empresa, verbose_name=("empresa"), on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.nome} ({self.idade}) {self.email} {self.empresa}"
+   
+
 class Equipe(models.Model):
     equipe = models.CharField(max_length=99)
-    integrantes = models.CharField(max_length=100)
+    integrantes = models.ManyToManyField(People, verbose_name=("participantes"))
     qtdi = models.DecimalField(max_digits=14, decimal_places= 0)
     
     def __str__(self):
-        return f"{self.equipe} ({self.integrantes}) {self.qtdi}"
+        return f"{self.equipe} {self.integrantes} ({self.qtdi})"
     
     
