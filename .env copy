@@ -1,6 +1,6 @@
 MY_IP=191.52.55.72
 # Django
-SECRET_KEY=django_insecure_#-
+SECRET_KEY=+m_%%)aa2je3wp+8)mi!kn0^i-b77hc*8qqzda7alfmo=j6e%c
 DEBUG=True
 ALLOWED_HOSTS=['*']
 
