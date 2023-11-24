@@ -18,3 +18,6 @@ class EquipeViewSet(ModelViewSet):
 class EmpresaViewSet(ModelViewSet):
     queryset = Empresa.objects.all()
     serializer_class = EmpresaSerializer
+    
+    
+    
